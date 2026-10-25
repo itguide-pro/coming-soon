@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COMING SOON</title>
+
+  <!-- Google Fonts Fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Critical Layout CSS & Font Declaration -->
+  <style>
+    @font-face {
+      font-family: 'Ubuntu Mono';
+      src: url('./UbuntuMono.woff2') format('woff2');
+      font-style: normal;
+      font-display: swap;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      background-color: #300A24;
+      color: #EEEEEC;
+      font-family: 'Ubuntu Mono', 'DejaVu Sans Mono', Consolas, Monaco, monospace;
+      font-size: 18px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .terminal-container {
+      margin-bottom: 25vh;
+      width: fit-content;
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+
+    .brand-title {
+      color: #E95420;
+      font-weight: 700;
+      font-size: 22px;
+      letter-spacing: 0.3px;
+      margin-bottom: 3px;
+    }
+
+    .brand-description{
+      color: #D3D7CF;
+      font-size: 16px;
+      margin-top: 3px;
+    }
+
+    .log-line {
+      color: #D3D7CF;
+      font-size: 16px;
+    }
+
+    .tag-status {
+      color: #8AE234;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .log-meta {
+      color: #888A85;
+      font-size: 16px;
+      margin-top: 3px;
+    }
+
+    .nowrap {
+      white-space: nowrap;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 9px;
+      height: 18px;
+      background-color: #FFFFFF;
+      vertical-align: -2px;
+      margin-left: 6px;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+
+  <!-- External Stylesheet for Waitlist Components and Layout -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <main class="terminal-container">
+    <div class="brand-title">itguide.pro</div>
+    <div class="brand-description">description: Next-Gen Interactive Learning Platform</div>
+    <div class="log-line">status: <span class="tag-status">[COMING SOON]</span></div>
+    <div class="log-meta">currently under active <span class="nowrap">development.<span class="cursor"></span></span></div>
+
+    <!-- Early Access Section -->
+    <section class="waitlist-card" aria-label="Early Access">
+      <div class="waitlist-label">
+        Early access
+      </div>
+
+      <form id="waitlist" class="waitlist-form" novalidate>
+        <div class="waitlist-input-group">
+          <input 
+            type="email" 
+            id="email" 
+            name="email"
+            class="waitlist-input" 
+            placeholder="user@domain.com" 
+            required 
+            autocomplete="email" 
+            spellcheck="false"
+            aria-label="Email"
+          />
+          <button type="submit" id="btn" class="waitlist-btn">
+            <span class="btn-text">NOTIFY ME</span>
+          </button>
+        </div>
+      </form>
+
+      <div id="msg" class="waitlist-msg" style="display: none;" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- Early Access Subscription Script -->
+  <script src="./script.js" defer></script>
+</body>
+</html>
